@@ -31,8 +31,8 @@ Instaling necessary libraries after creating an virtual environment to not corru
   pip install numpy faiss-cpu
 ```
 **Calibration Dataset** is created from Search Database by random sampling.
-Size of calibration dataset is comparable to 0.5*query dataset size for **SIFT**
-and  1*query dataset size for **GIST**
+Size of calibration dataset is comparable to 0.5 \times query dataset size for **SIFT**
+and  1\times query dataset size for **GIST**
 ```c
   python3 create_calibartion_dataset_sift.py
   python3 create_calibartion_dataset_gist.py
