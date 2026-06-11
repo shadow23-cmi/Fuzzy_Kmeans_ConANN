@@ -45,6 +45,7 @@ and  1$\times$ query dataset size for **GIST**
   gcc -O3 -march=native -ffast-math -c lib/ConANN.c -o obj/ConANN.o -lm
 ```
 ###  Experiments
+####  IVF ANN
 **IVF ANN** standard
 ```c
   gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o experiments/ivf_ann_sift_1m.c -Ilib -o bin/ivf_ann_sift -lm
@@ -54,4 +55,38 @@ and  1$\times$ query dataset size for **GIST**
 ```c
   gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o experiments/ivf_ann_sift_1m_fuzzy_clustering.c -Ilib -o bin/ivf_ann_sift_fuzzy -lm
   gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o experiments/ivf_ann_gist_1m_fuzzy_clustering.c -Ilib -o bin/ivf_ann_gist_fuzzy -lm
+```
+#### ConANN
+**ConANN** standard
+```c
+  gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o obj/ConANN.o experiments/conann_sift_1m.c -Ilib -o bin/conann_sift -lm
+  gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o obj/ConANN.o experiments/conann_gist_1m.c -Ilib -o bin/conann_gist -lm
+```
+**ConANN** (Our implementation) with fuzzy clustering
+```c
+  gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o obj/ConANN.o experiments/conann_sift_1m_fuzzy_clustering.c -Ilib -o bin/conann_sift_fuzzy -lm
+  gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o obj/ConANN.o experiments/conann_gist_1m_fuzzy_clustering.c -Ilib -o bin/conann_gist_fuzzy -lm
+```
+##  Run:
+####  IVF ANN
+**IVF ANN** standard
+```c
+  bin/ivf_ann_sift
+  bin/ivf_ann_gist
+```
+**IVF ANN** (Our implementation) with fuzzy clustering
+```c
+  bin/ivf_ann_sift_fuzzy
+  bin/ivf_ann_gist_fuzzy
+```
+#### ConANN
+**ConANN** standard
+```c
+  bin/conann_sift
+  bin/conann_gist
+```
+**ConANN** (Our implementation) with fuzzy clustering
+```c
+  bin/conann_sift_fuzzy
+  bin/conann_gist_fuzzy
 ```
