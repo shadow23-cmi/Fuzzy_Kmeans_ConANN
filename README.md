@@ -38,8 +38,18 @@ and  1$\times$ query dataset size for **GIST**
   python3 create_calibartion_dataset_gist.py
 ```
 ## Compilation:
+###  Library files
 ```c
   gcc -O3 -march=native -ffast-math -c lib/k_means.c -o obj/k_means.o
   gcc -O3 -march=native -ffast-math -c lib/IVF_ANN.c -o obj/IVF_ANN.o -lm
   gcc -O3 -march=native -ffast-math -c lib/ConANN.c -o obj/ConANN.o -lm
+```
+###  Experiments
+**IVF ANN** standard
+```c
+  gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o experiments/ivf_ann_sift_1m.c -Ilib -o bin/ivf_ann_sift -lm
+```
+**IVF ANN** (Our implementation) with fuzzy clustering
+```c
+  gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o experiments/ivf_ann_sift_1m_fuzzy_clustering.c -Ilib -o bin/ivf_ann_sift_fuzzy -lm
 ```
