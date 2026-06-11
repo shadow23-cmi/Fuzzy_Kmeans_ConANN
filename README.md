@@ -48,8 +48,10 @@ and  1$\times$ query dataset size for **GIST**
 **IVF ANN** standard
 ```c
   gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o experiments/ivf_ann_sift_1m.c -Ilib -o bin/ivf_ann_sift -lm
+  gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o experiments/ivf_ann_gist_1m.c -Ilib -o bin/ivf_ann_gist -lm
 ```
 **IVF ANN** (Our implementation) with fuzzy clustering
 ```c
   gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o experiments/ivf_ann_sift_1m_fuzzy_clustering.c -Ilib -o bin/ivf_ann_sift_fuzzy -lm
+  gcc -O3 -march=native -ffast-math -fopenmp obj/k_means.o obj/IVF_ANN.o experiments/ivf_ann_gist_1m_fuzzy_clustering.c -Ilib -o bin/ivf_ann_gist_fuzzy -lm
 ```
