@@ -1,12 +1,7 @@
 # Fuzzy_Kmeans_ConANN
 ## Implementation of ConANN with fuzzy Kmeans clustering
 ## Author:
-  1. Suman Polley
-  2. Madhumita Das
-  3. Raj Lohar
-  4. Bhagavath Chukka
-  5. Tanish Kothari
-
+        Suman Polley
 
 ## Downloading and extracting Data
 **SIFT1M** dataset
